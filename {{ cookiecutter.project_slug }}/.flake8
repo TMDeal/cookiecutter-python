@@ -1,0 +1,8 @@
+[flake8]
+exclude=
+    .git,
+    __pycache__,
+# Ignore these linting errors/warnings
+# E501: line too long (82 characters)
+# F401: module imported but unused
+extend-ignore=E501,F401

@@ -1,0 +1,21 @@
+{
+  "project_name": "My Project",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+  "module_name": "{{ cookiecutter.project_name|lower()|replace(' ', '_')|replace('-', '_') }}",
+  "description": "Description of {{ cookiecutter.project_name }}",
+  "github_username": "example-username",
+  "author_full_name": "Anonymous",
+  "author_email": "email@example.com",
+  "python_version": "3.11.0",
+
+  "__prompts__": {
+    "project_name": "Project Name:",
+    "project_slug": "Project Slug:",
+    "module_name": "Module Name:",
+    "author_full_name": "Author full Name:",
+    "author_email": "Author Email:",
+    "description": "Project Description:",
+    "github_username": "Github Username:",
+    "python_version": "Python Version:"
+  }
+}

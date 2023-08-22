@@ -1,0 +1,43 @@
+name: {{ cookiecutter.project_slug }}
+
+services:
+  dev:
+    build: .
+    image: {{ cookiecutter.project_slug }}
+    pull_policy: never
+    command: python main.py
+    volumes:
+      - .:/opt/{{ cookiecutter.project_slug }}
+    ports:
+      - 5678:5678
+    restart: unless-stopped
+    environment:
+      - ENV=dev
+      - PYDEVD_DISABLE_FILE_VALIDATION=1
+    depends_on:
+      - docs
+    profiles: ["dev"]
+
+  prod:
+    build: .
+    image: {{ cookiecutter.project_slug }}
+    pull_policy: never
+    command: python main.py
+    volumes:
+      - .:/opt/{{ cookiecutter.project_slug }}
+    restart: unless-stopped
+    environment:
+      - ENV=prod
+    profiles: ["prod"]
+
+  docs:
+    build: .
+    image: {{ cookiecutter.project_slug }}
+    pull_policy: never
+    command: "mkdocs serve -a 0.0.0.0:8001"
+    volumes:
+      - .:/opt/{{ cookiecutter.project_slug }}
+    ports:
+      - 8001:8001
+    restart: unless-stopped
+    profiles: ["dev"]
