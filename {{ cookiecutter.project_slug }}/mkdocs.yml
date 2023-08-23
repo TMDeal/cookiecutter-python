@@ -5,7 +5,7 @@ watch:
   - "mkdocs.yml"
   - "docs"
   - "htmlcov"
-  - "{{ cookiecutter.project_slug }}"
+  - "{{ cookiecutter.module_name }}"
   - "main.py"
 
 theme:
