@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker compose --profile dev run --rm dev pytest -vv
+docker compose --profile dev run --rm dev pytest -vv {{ cookiecutter.module_name }}

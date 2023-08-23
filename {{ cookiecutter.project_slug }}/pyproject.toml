@@ -41,7 +41,7 @@ module = "debugpy"
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
-addopts = "--cov={{ cookiecutter.project_slug }} --cov-report html --cov-report term --cov-config .coveragerc --doctest-modules"
+addopts = "--cov={{ cookiecutter.module_name }} --cov-report html --cov-report term --cov-config .coveragerc --doctest-modules"
 python_functions = ["test_*", "*_test"]
 python_classes = ["*Test", "Test*"]
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
